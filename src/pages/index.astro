@@ -1,0 +1,159 @@
+---
+import { Projects } from "../components/Projects";
+import Layout from "../layouts/Layout.astro";
+import { Pickaxe } from "lucide-astro";
+---
+
+<Layout title="Shashank Bhat | Full Stack Developer">
+  <main class="my-[100px]">
+    <section class="flex h-full flex-col md:flex-row">
+      <div
+        data-aos="zoom-in-up"
+        class="text-white justify-between items-center flex-1 font-serif text-lg md:text-xl"
+      >
+        <div
+          class="flex-1 flex gap-[25px] flex-col justify-center items-center"
+        >
+          <p>
+            Hey! I'm Shashank Bhat, I am a software developer (frontend focus)
+            from Bengaluru, India.
+          </p>
+          <p>
+            I specialize in building web applications and sites using
+            Javascript, React, Nextjs, Astro and Node. I have also dabbled with
+            python at work.
+          </p>
+          <p>
+            I'm a Software Developer at Kenpath Technologies by the day, and by
+            night + weekends, I'm working on small cool apps and tools.
+          </p>
+        </div>
+      </div>
+      <div
+        data-aos="zoom-in-left"
+        class="flex-1 w-auto relative justify-center flex"
+      >
+        <div
+          class="flex my-[150px] md:ml-[100px] md:my-0 justify-center items-center"
+        >
+          <div class="contact-glow absolute h-full w-full"></div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xml:lang="en"
+            class="absolute"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 500 500"
+            width="450"
+            height="450"
+          >
+            <title>Circular Text Path</title>
+            <defs>
+              <path
+                id="textcircle"
+                d="M250,400
+							 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"
+                transform="rotate(12,250,250)"></path>
+            </defs>
+            <g class="textcircle">
+              <text textLength="940">
+                <textPath
+                  xlink:href="#textcircle"
+                  aria-label="OPEN FOR WORK"
+                  textLength="940"
+                  class="font-serif"
+                >
+                  OPEN FOR WORK OPEN FOR WORK &#160;
+                </textPath>
+              </text>
+            </g>
+          </svg>
+          <a
+            href="https://cal.com/shashank-bhat"
+            target="_blank"
+            referrerpolicy="no-referrer"
+            id="#connectBtn"
+            class="relative font-serif flex h-12 overflow-hidden rounded-lg p-[1px] focus:outline-none"
+          >
+            <span
+              class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,green_50%,#00FFD1_100%)]"
+            ></span>
+            <span
+              class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-transparent px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl"
+            >
+              Lets Connect
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col mt-[100px]">
+      <div class="flex w-full gap-2 justify-center items-center">
+        <div class="flex gap-2 font-sans text-white items-center">
+          <div class="border border-green-800 rounded-md p-2">
+            <Pickaxe size="16" class="text-green-400" />
+          </div>
+          <p>Projects</p>
+        </div>
+        <hr class="h-px w-full my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      </div>
+      <Projects />
+
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .text-ring-wrap {
+    display: flex;
+    position: relative;
+    filter: blur(8px);
+    -webkit-filter: blur(50px);
+    background: #00ffd1;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  text {
+    fill: white;
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-variant-ligatures: none;
+    letter-spacing: 6px;
+    animation: rotate 25s linear infinite;
+    transform-origin: 250px 250px;
+  }
+
+  svg {
+    max-width: 80vmin;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .textcircle {
+    transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+    transform-origin: 250px 250px;
+  }
+
+  #connectBtn:hover > .textcircle {
+    transform: scale(1.2) rotate(90deg);
+  }
+  .contact-glow {
+    background-color: rgba(0, 255, 208, 0.74);
+    filter: blur(8px);
+    width: 200px;
+    border-radius: 100px;
+
+    -webkit-filter: blur(100px);
+  }
+  .white-ruler {
+    height: 2px;
+    background-color: white;
+    border: 1px solid;
+  }
+</style>

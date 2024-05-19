@@ -1,0 +1,33 @@
+---
+import { Linkedin, Github, Twitter } from "lucide-astro";
+---
+
+<nav class="flex justify-between items-start">
+  <div
+    class="relative flex w-auto glass-card z-50 bg-white/10 backdrop-blur-lg p-4 rounded-b-lg shadow-lg"
+  >
+    <div class="absolute img-shadow h-full w-full top-0 right-0 rounded-b z-0">
+    </div>
+    <img src="/shashank-dp.jpg" alt="me" class="w-20 h-20 rounded-full z-20" />
+  </div>
+  <div class="flex flex-row-reverse gap-2 my-4 justify-between items-center text-white">
+    <a href="https://www.linkedin.com/in/shashank-bhat-1b9a89163" target="_blank" referrerpolicy="no-referrer" class="text-slate-300">
+      <Linkedin size="20" />
+    </a>
+    <a href="https://github.com/shashankbhat2" target="_blank" referrerpolicy="no-referrer" class="text-slate-300">
+      <Github size="20" />
+    </a>
+    <a href="https://x.com/Shashan30500610" target="_blank" referrerpolicy="no-referrer" class="text-slate-300">
+      <Twitter size="20" />
+    </a>
+  </div>
+</nav>
+
+<style>
+  .img-shadow {
+    background-color: rgba(8, 112, 188, 0.5);
+    filter: blur(25px);
+    border-radius: 100px;
+    -webkit-filter: blur(25px);
+  }
+</style>
