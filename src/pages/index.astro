@@ -1,12 +1,13 @@
 ---
 import { Projects } from "../components/Projects";
+import WorkContainer from "../components/work-container.astro";
 import Layout from "../layouts/Layout.astro";
-import { Pickaxe } from "lucide-astro";
+import { Pickaxe, BriefcaseBusiness} from "lucide-astro";
 ---
 
 <Layout title="Shashank Bhat | Full Stack Developer">
-  <main class="my-[100px]">
-    <section class="flex h-full flex-col md:flex-row">
+  <main class="my-[50px]">
+    <section class="flex h-full md:py-[100px] flex-col md:flex-row">
       <div
         data-aos="zoom-in-up"
         class="text-white justify-between items-center flex-1 font-serif text-lg md:text-xl"
@@ -31,10 +32,10 @@ import { Pickaxe } from "lucide-astro";
       </div>
       <div
         data-aos="zoom-in-left"
-        class="flex-1 w-auto relative justify-center flex"
+        class="flex-1 w-auto relative mt-[50px]  justify-center flex"
       >
         <div
-          class="flex my-[150px] md:ml-[100px] md:my-0 justify-center items-center"
+          class="flex my-[150px] md:my-0 justify-center items-center"
         >
           <div class="contact-glow absolute h-full w-full"></div>
           <svg
@@ -86,7 +87,7 @@ import { Pickaxe } from "lucide-astro";
         </div>
       </div>
     </section>
-    <section class="flex flex-col mt-[100px]">
+    <section class="flex flex-col mt-[50px] gap-4">
       <div class="flex w-full gap-2 justify-center items-center">
         <div class="flex gap-2 font-sans text-white items-center">
           <div class="border border-green-800 rounded-md p-2">
@@ -97,7 +98,24 @@ import { Pickaxe } from "lucide-astro";
         <hr class="h-px w-full my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       </div>
       <Projects />
-
+    </section>
+    <section class="flex flex-col mt-[50px] gap-4">
+      <div class="flex w-full gap-3 justify-center items-center">
+        <div class="flex  gap-2 font-sans text-white items-center">
+          <div class="border border-indigo-800 rounded-md p-2">
+            <BriefcaseBusiness size="16" class="text-indigo-400" />
+          </div>
+          <p class="text-xs">Work Experience</p>
+        </div>
+        <hr class="h-px w-full my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+        <a
+          href="/resume.pdf"
+          class="px-2 cursor-pointer py-2 flex flex-1 gap-2 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] transition duration-200"
+        >
+          <span class="w-full text-slate-50 font-sans text-[10px]">Resume</span>
+        </a>
+      </div>
+      <WorkContainer />
     </section>
   </main>
 </Layout>

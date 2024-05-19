@@ -21,7 +21,13 @@ const { title } = Astro.props;
   <body class="px-4 md:container md:mx-auto">
     <Navbar />
     <slot />
+    <hr class="h-px w-full my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+
+    <footer class="text-center my-2">
+      <p class="text-slate-500 font-sans text-xs">Shashank Bhat &copy; 2024</p>
+    </footer>
     <script src="../js/main.js"></script>
+   
   </body>
 </html>
 

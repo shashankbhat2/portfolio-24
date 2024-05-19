@@ -1,0 +1,91 @@
+---
+// Props passed to the component
+const { title, role, duration } = Astro.props;
+---
+
+<div
+  onclick="this.classList.toggle('active');"
+  class="card relative flex w-full flex-col gap-2 cursor-pointer p-0 font-serif text-slate-300 hover:text-green-300"
+>
+  <div class="flex items-center justify-between mx-[20px]">
+    <h1 class="title text-2xl">{title}</h1>
+  </div>
+  <hr
+    class="divider h-px w-full my-3 bg-gray-600 hover:bg-[#01F0C5] border-0"
+  />
+  <div class="info flex-col gap-1 flex mx-[20px]">
+    <h4 class="role text-lg">{role}</h4>
+    <h3 class="duration text-sm font-sans">{duration}</h3>
+  </div>
+  <!-- <div
+    class="popover hidden mt-[50px] md:ml-[50px] absolute w-full my-0 p-3 border gap-0 border-zinc-800 bg-black backdrop-blur-sm rounded-lg shadow-lg"
+  >
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quidem
+      perferendis, aliquam molestiae sit blanditiis perspiciatis voluptate
+      pariatur libero. Non est optio nisi distinctio accusantium atque molestias
+      consequatur, quo corrupti!
+    </p>
+  </div> -->
+</div>
+
+<style>
+  .card {
+    transition: color 0.3s;
+    position: relative; /* Ensure relative positioning for correct popover placement */
+  }
+  .card:hover .popover {
+    display: flex;
+    opacity: 1;
+    position: absolute; /* Positioning relative to the card */
+    top: 0; /* Position it below the card */
+    left: 0; /* Align it with the card's left edge */
+    transform: translateX(50px); /* Adjust X position as needed */
+    width: auto; /* Adjust width as necessary */
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Make sure it's on top of other content */
+    pointer-events: none; /* Disables interaction so clicks go 'through' when not visible */
+  }
+  .card:hover,
+  .popover {
+    display: flex;
+    opacity: 1;
+  }
+
+  .card:hover {
+    color: var(--hover-color, #01f0c5);
+  }
+
+  .card:hover .divider {
+    background-color: var(--divider-hover-color, #9ae6b4);
+    box-shadow: 0 0 8px var(--divider-glow-color, #01f0c5);
+  }
+
+  .title,
+  .divider,
+  .role,
+  .duration {
+    margin: 0;
+    padding: 0.05rem 0;
+  }
+
+  .divider {
+    transition:
+      background-color 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .popover {
+    transition: opacity 0.3s;
+    opacity: 0;
+    z-index: 1000;
+  }
+
+  .card:hover .popover {
+    opacity: 1;
+  }
+</style>

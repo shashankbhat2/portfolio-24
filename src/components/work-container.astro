@@ -1,0 +1,59 @@
+---
+// Import necessary subcomponents
+import ExperienceCard from './experience-card.astro';
+---
+
+<div
+  class="experience-container"
+  data-aos="fade-up"
+>
+  <ExperienceCard
+    title="Kenpath"
+    role="Junior Software Engineer"
+    duration="2023 - present"
+  />
+  <ExperienceCard
+    title="Deloitte USI"
+    role="Associate Analyst"
+    duration="2022 - 2023"
+  />
+  <ExperienceCard
+    title="Freelance"
+    role="Web Developer & Designer"
+    duration="2021 - 2022"
+  />
+  <ExperienceCard
+    title="Preplaced"
+    role="Software Engineer Intern"
+    duration="2020 - 2021"
+  />
+</div>
+
+
+<style>
+.experience-container {
+  border: 1px solid var(--border-color, #2d3748);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 20px 0px; /* Example padding */
+  width: auto; /* Full width */
+  overflow-x: auto;
+  overflow-y: visible; /* Ensure y overflow is visible */
+  gap: 20px; /* Space between cards */
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 0px; /* Space between cards */
+    padding: 25px 0px; /* Example padding */
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  
+  scrollbar-width: none; /* Firefox */
+}
+</style>
